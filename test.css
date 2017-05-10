@@ -1,0 +1,26 @@
+.hoge1{
+	color:red;
+	cursor:pointer;
+}
+
+#popup-background{
+    position:fixed;     /* 位置の固定 */
+    top: 0;             /* 表示位置 */
+    left: 0;            /* 表示位置 */
+    height: 100%;       /* 画面全体に表示 */
+    width: 100%;        /* 画面全体に表示 */
+    background:#000;    /* 背景色 */
+    opacity: 0.60;      /* 透明度 */
+    margin: 0;          /* 余白の削除 */
+    padding: 0;         /* 余白の削除 */
+    z-index:1000;       /* 要素のz座標 */
+}
+#popup-item{
+    position:fixed;     /* 位置の固定 */
+    top: 50%;           /* 表示位置(真ん中に表示) */
+    left: 50%;          /* 表示位置(真ん中に表示) */
+    margin: 0;          /* 余白の削除 */
+    padding: 0;         /* 余白の削除 */
+    z-index:1001;       /* 要素のz座標 */
+}
+
