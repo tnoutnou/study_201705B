@@ -32,5 +32,6 @@
 	width:200px;
 	text-align: right;
     z-index:1002;       /* 要素のz座標 */
+	color: white;
 }
 
