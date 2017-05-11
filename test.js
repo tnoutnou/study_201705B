@@ -4,6 +4,8 @@ $(function(){
     // ポップアップ用のタグを消す
     $('#popup-background').hide();
     $('#popup-item').hide();
+    $('#popup-text').hide();
+    $('#search-con').hide();
 	
     // class「popupimg」のリンクがクリックされた時のイベント定義
     $('.popupimg').bind('click', function(e){
@@ -39,6 +41,15 @@ $(function(){
             
         // Image()に画像を読み込ませる
         img.src = imgsrc;
+		
+		$('#popup-text').text('');
+		if (e.offsetX >= 100) {
+			$('#popup-text').css('text-align','right');
+		} else {
+			$('#popup-text').css('text-align','left');
+		}
+
+
     });
 	
 
@@ -47,6 +58,7 @@ $(function(){
         // ポップアップを消すため、タグをフェードアウトさせる
         $('#popup-background').fadeOut();
         $('#popup-item').fadeOut();
+        $('#popup-text').fadeOut();
         
     });
 
@@ -56,7 +68,7 @@ $(function(){
 //        $('#popup-background').fadeOut();
 //        $('#popup-item').fadeOut();
 		var v_id = $('.hoge1').data('test');
-		alert(e.offsetX);
+//		alert(e.offsetX);
 		
 //		var v_id2 = $(v_id).href;
 		var v_arr = [];
@@ -68,8 +80,12 @@ $(function(){
 
 		if (e.offsetX >= 100) {
 			var v_id5 = Number(v_id) + 1;
+			$('#popup-text').text('>>');
+			$('#popup-text').css('text-align','right');
 		} else {
 			var v_id5 = (Number(v_id) - 1 + v_arr.length) % v_arr.length;
+			$('#popup-text').text('<<');
+			$('#popup-text').css('text-align','left');
 		}
 				
 //		alert(v_arr);
@@ -100,10 +116,42 @@ $(function(){
  
         // Image()に画像を読み込ませる
         img.src = imgsrc;
-
 		$('.hoge1').data('test', v_id5);
+
+
         
     });
+	
+	
+	
+    // ポップアップされた領域でマウスを移動したら
+    $('#popup-item').bind('mousemove', function(e){
+		if (e.offsetX >= 100) {
+			$('#popup-text').text('>>');
+			$('#popup-text').css('text-align','right');
+		} else {
+			$('#popup-text').text('<<');
+			$('#popup-text').css('text-align','left');
+		}
+	});
+
+    // ポップアップされた領域のクリックイベント
+    $('#search-btn').bind('click', function(){
+        // 表示
+		var v_lbl = $('#search-btn').attr('value');
+		
+		if (v_lbl === '検索表示') {
+			//表示
+			$('#search-con').fadeIn();
+			$('#search-btn').attr('value','検索非表示');
+		} else {
+			// 非表示
+			$('#search-con').fadeOut();
+			$('#search-btn').attr('value','検索表示');
+		};
+        
+    });
+
 
     
     // ポップアップ表示用関数
@@ -135,10 +183,23 @@ $(function(){
 
             // 画像の表示用タグにCSSを当て、表示を行う
             $('#popup-item').css(cssObj).fadeIn(100);
+
+            // 取得したマージンと画像のサイズをCSSで定義する
+            var cssObj2 = {
+//                  marginTop: item_hieght_margin
+//                , marginLeft: item_width_margin
+//                , width: imgsource.width
+//                , height: imgsource.height
+                  marginTop: 100
+                , marginLeft: -100
+            }
+
+
+            $('#popup-text').css(cssObj2).fadeIn(100);
         });
     }
 
-    // class「popupimg」のリンクがクリックされた時のイベント定義
+    // 
     $('.hoge1').bind('click', function(e){
 		alert($('.hoge1').data('test'));
 //        $('.hoge1').data('test' , $('#popup-item').data('test'));
