@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!--	<link rel="stylesheet" type="text/css" href="test.css" />	-->
+<!--	<script type="text/javascript" src="js/src/jquery.js"></script>	-->
+
+	<div id="search-con">
+<!--		<form method="post">	-->
+			<p>郵便番号:<input id="zipcode" type="text" name="zipcode"></p>
+			<p><input id="tran-btn" type="button" value="郵便番号から住所設定"></p>
+			<p>都道府県名:<input id="kenname" type="text" name="kenname"></p>
+			<p>市区名:<input id="cityname" type="text" name="cityname"></p>
+			<p>町名:<input id="townname" type="text" name="townname"></p>
+<!--		</form>	-->
+	</div>
+
+	<script type="text/javascript" src="js/jquery-git.js"></script>
+	<script type="text/javascript">
+        $(function() {
+
+            $('#tran-btn').click(function() {
+                
+                $.get('get_zip.php', {
+                    zipcode: $('#zipcode').val()
+                }, function(data) {
+//                    $('#kenname').html(data.ken_name_kan);
+                    $('#kenname').val(data.ken_name_kan);
+                    $('#cityname').val(data.city_name_kan);
+                    $('#townname').val(data.town_name_kan);
+                });
+
+            });
+
+        });
+	</script>
+
+	
+	</head>
+<body>
+
+
+
+	
+</body>
+</html>
+
+
