@@ -12,8 +12,8 @@ try {
  // FETCH_CLASS
 
 	
- 	$stmt = $db->query("select ken_name_kan, city_name_kan, town_name_kan from zips where zip_id like '" . str_replace('-','', $_GET['zipcode']) . "%' order by zip_id , id limit 1");
-//	$stmt = $db->query("select ken_name_kan, city_name_kan, town_name_kan from zips where zip_id like '932%' order by zip_id , id limit 1");
+ 	$stmt = $db->query("select ken_name_kan, city_name_kan, town_name_kan from zips where zip_code like '" . str_replace('-','', $_GET['zipcode']) . "%' order by zip_code , id limit 1");
+//	$stmt = $db->query("select ken_name_kan, city_name_kan, town_name_kan from zips where zip_code like '932%' order by zip_code , id limit 1");
 	$rst = array(
 		"ken_name_kan"  => "",
 		"city_name_kan" => "",
