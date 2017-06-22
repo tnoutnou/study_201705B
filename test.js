@@ -206,4 +206,29 @@ $(function(){
 	});
 
 	
+    // ボタンがクリックされたときの動作（色を変える）
+    $('.cs-btn-25').bind('click', function(){
+        // 表示
+//		alert($(this).css("background-color"));
+		$('.cs-btn-25').css("border-color","white");
+		$('.cs-btn-25').css("background","lightgray");
+		$(this).css("border-color","black");
+		$(this).css("background","gray");
+        
+    });
+
+    $('.cs-btn-20').bind('click', function(){
+        // 表示
+//		alert($(this).css("background-color"));
+		$('.cs-btn-20').css("border-color","white");
+		$('.cs-btn-20').css("background","lightgray");
+		$(this).css("border-color","black");
+		$(this).css("background","gray");
+        
+    });
+
+	
+	
+	
+	
 });

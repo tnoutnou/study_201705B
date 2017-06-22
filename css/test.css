@@ -1,0 +1,72 @@
+.hoge1{
+	color:red;
+	cursor:pointer;
+}
+
+#popup-background{
+    position:fixed;     /* 位置の固定 */
+    top: 0;             /* 表示位置 */
+    left: 0;            /* 表示位置 */
+    height: 100%;       /* 画面全体に表示 */
+    width: 100%;        /* 画面全体に表示 */
+    background:#000;    /* 背景色 */
+    opacity: 0.60;      /* 透明度 */
+    margin: 0;          /* 余白の削除 */
+    padding: 0;         /* 余白の削除 */
+    z-index:1000;       /* 要素のz座標 */
+}
+
+.cs-main-blk{
+	letter-spacing:-.40em;
+
+}
+
+.cs-btn-div {
+	background:		skyblue;
+	width:			20%;
+	display:		inline-block;
+	letter-spacing:	normal;
+	border:			solid 1px white;
+	box-sizing:		border-box;
+}
+
+
+.cs-btn-20 {
+	display:		inline-block;
+	height:			20%;
+	width:			20%;
+	padding:		0 0 0 0;
+	border-width:	1 1 1 1;
+	border-color:	white;
+	background:		lightgray;
+
+}
+
+.cs-btn-25 {
+	display:		inline-block;
+	height:			25%;
+	width:			25%;
+	padding:		0 0 0 0;
+	border-width:	1 1 1 1;
+	border-color:	white;
+	background:		lightgray;
+
+}
+
+
+.cs-txt-25 {
+	text-align:		center;
+	display:		inline-block;
+	height:			25%;
+	width:			25%;
+	margin-top:		5px;
+	margin-bottom:	5px;
+	border:			solid 1px black;
+	border-color:	black;
+	background:		white;
+
+}
+
+
+
+
